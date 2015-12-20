@@ -70,7 +70,7 @@ string requestFileName(ifstream & readFile);
  * @param unsigned int - stores the number of characters in the source file.
  * @param ifstream - takes reference to the stream of open file for reading *
  */
-void countingNumberInputCharacters(map <char,int> & characterMap,unsigned int & numOfChars,ifstream & readFile);
+void countCharacters(map <char,int> & characterMap,unsigned int & numOfChars,ifstream & readFile);
 
 /*
  * Builds a coding tree for characters of the text according to the Huffman's algoritm
@@ -239,7 +239,7 @@ void fileEncoding(){
 
     /* The cycle of filling character Map associative array values
    (the number of occurrences of a character in the text).*/
-    countingNumberInputCharacters(characterMap,numOfChars,readFile);
+    countCharacters(characterMap,numOfChars,readFile);
 
     MyVector<bool> code;// character code.
 
@@ -291,7 +291,7 @@ string requestFileName(ifstream & readFile){
 
 
 
-void countingNumberInputCharacters(map <char,int> & characterMap,unsigned int & numOfChars,ifstream & readFile){
+void countCharacters(map <char,int> & characterMap,unsigned int & numOfChars,ifstream & readFile){
     char ch;
     while(readFile.get(ch) ){
         characterMap[ch]++;
